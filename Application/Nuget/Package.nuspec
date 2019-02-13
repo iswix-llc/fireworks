@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>fireworks</id>
+    <version>5.0</version>
+    <authors>iswix-llc</authors>
+    <owners>iswix-llc</owners>
+    <licenseUrl>https://github.com/iswix-llc/vxen/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/iswix-llc/vxen</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Reusable application framework for creating single page applications that graphically manage XML documents.</description>
+    <releaseNotes>See GitHub</releaseNotes>
+    <copyright>Copyright 2010-2018 ISWIX, LLC</copyright>
+    <tags>wpf winforms c# plugins xml designers application framework</tags>
+	<iconUrl>https://raw.githubusercontent.com/iswix-llc/vxen-tutorials/master/Images/vxen.png</iconUrl>
+    <dependencies>
+      <dependency id="DiffPlex" version="1.4.3"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="lib\**" target="lib" />
+  </files>
+</package>
