@@ -154,7 +154,7 @@ namespace FireworksFramework.Views
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if (FireworksManager.FireworksManagerInstance.FilePath != null)
+            if (!string.IsNullOrEmpty(FireworksManager.FireworksManagerInstance.FilePath))
             {
                 viewModel.TryLoad(FireworksManager.FireworksManagerInstance.FilePath);
             }
