@@ -6,6 +6,7 @@
     <authors>iswix-llc</authors>
     <owners>iswix-llc</owners>
     <projectUrl>https://github.com/iswix-llc/fireworks</projectUrl>
+    <license type="expression">MS-PL</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Reusable application framework for creating single page applications that graphically manage XML documents.</description>
     <releaseNotes>See GitHub</releaseNotes>
