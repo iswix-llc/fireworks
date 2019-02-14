@@ -33,10 +33,7 @@ namespace FireworksFramework.Views
             InitializeComponent();
             PopulateMenuStrip();
 
-            if(FireworksManager.FireworksManagerInstance.FilePath!=null)
-            {
-                viewModel.TryLoad(FireworksManager.FireworksManagerInstance.FilePath);
-            }
+       
             _host = new System.Windows.Forms.Integration.WindowsFormsHost();
         }
 
@@ -155,5 +152,12 @@ namespace FireworksFramework.Views
             viewModel.Save();
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (FireworksManager.FireworksManagerInstance.FilePath != null)
+            {
+                viewModel.TryLoad(FireworksManager.FireworksManagerInstance.FilePath);
+            }
+        }
     }
 }
