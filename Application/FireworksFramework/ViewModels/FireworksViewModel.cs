@@ -362,7 +362,7 @@ namespace FireworksFramework.ViewModels
         }
         private string GetProductName()
         {
-            return Application.Current.MainWindow.GetType().Assembly.GetName().Name;
+            return FireworksManager.FireworksManagerInstance.ProductName;
         }
 
         private string GetExecutablePath()

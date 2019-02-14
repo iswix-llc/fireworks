@@ -36,7 +36,7 @@ namespace FireworksFramework.Managers
         }
         public BitmapImage BrandingBitMap { get; set; }
         public string ProductName { get; set; }
-        public FireworksManager()
+        private FireworksManager()
         {
             try
             {

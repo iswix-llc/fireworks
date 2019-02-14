@@ -55,7 +55,10 @@ namespace FireworksFramework.ViewModels
                 pluginDescriptions.Add(pluginDescription);
             }
             PluginDescriptions = pluginDescriptions;
-            SelectedPluginDescription = PluginDescriptions.First();
+            if (PluginDescriptions.Any())
+            {
+                SelectedPluginDescription = PluginDescriptions.First();
+            }
         }
 
         public void SelectionChanged(string license)
