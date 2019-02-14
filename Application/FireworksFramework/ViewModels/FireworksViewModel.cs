@@ -376,7 +376,7 @@ namespace FireworksFramework.ViewModels
         }
 
 
-        private bool TryLoad(string filePath)
+        public bool TryLoad(string filePath)
         {
             bool success = false;
             try

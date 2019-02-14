@@ -3,6 +3,7 @@
 // Web: http://www.iswix.com
 // All Rights Reserved
 ///////////////////////////////////////////////
+using FireworksFramework.Managers;
 using System;
 using System.IO;
 using System.Reflection;
@@ -31,6 +32,11 @@ namespace FireworksFramework.Views
 
             InitializeComponent();
             PopulateMenuStrip();
+
+            if(FireworksManager.FireworksManagerInstance.FilePath!=null)
+            {
+                viewModel.TryLoad(FireworksManager.FireworksManagerInstance.FilePath);
+            }
             _host = new System.Windows.Forms.Integration.WindowsFormsHost();
         }
 
