@@ -24,7 +24,7 @@ using static FireworksFramework.Types.Enums;
 
 namespace FireworksFramework.ViewModels
 {
-    class FireworksViewModel : ObservableObject, IPublishable
+    class FireworksViewModel : ObservableObject, IPublishable, IFireworksDesigner
     {
         Differences _differences;
         DocumentManager _documentManager = DocumentManager.DocumentManagerInstance;
@@ -93,6 +93,43 @@ namespace FireworksFramework.ViewModels
             {
                 _activeDesigner = value;
                 RaisePropertyChangedEvent("ActiveDesigner");
+            }
+        }
+
+        public string PluginName
+        {
+            get
+            {
+                // The component name we want to be known as.
+                return "FireworksFramework";
+            }
+        }
+
+        public Image PluginImage
+        {
+            get
+            {
+                return Image.FromStream(Assembly.GetExecutingAssembly().GetManifestResourceStream("FireworksFramework.Fireworks.ico"));
+            }
+        }
+        public PluginType PluginType { get { return PluginType.Component; } }
+
+        public string PluginOrder
+        {
+            // The fireworks framework is best always displayed second.
+            get
+            {
+                return "Fireworks";
+            }
+        }
+
+        public string PluginInformation
+        {
+            get
+            {
+                // The fireworks framework is best always displayed second.
+                return new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("FireworksFramework.License.txt")).ReadToEnd();
+
             }
         }
 
@@ -435,6 +472,16 @@ namespace FireworksFramework.ViewModels
             //        _differnces = null;
             //    }
             //}
+        }
+
+        public void LoadData()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsValidContext()
+        {
+            throw new NotImplementedException();
         }
     }
 }

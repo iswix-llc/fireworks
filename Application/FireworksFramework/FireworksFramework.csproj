@@ -105,8 +105,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Resource Include="Fireworks.ico" />
-    <Resource Include="License.txt" />
+    <EmbeddedResource Include="Fireworks.ico" />
+    <EmbeddedResource Include="License.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\CheckGrammarHS.png" />
