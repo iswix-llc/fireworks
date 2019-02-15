@@ -57,6 +57,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FireworksPlugin.cs" />
     <Compile Include="Interfaces\IFireworksDesigner.cs" />
     <Compile Include="Interfaces\IPublishable.cs" />
     <Compile Include="Managers\DocumentManager.cs" />

@@ -3,54 +3,23 @@
 // Web: http://www.iswix.com
 // All Rights Reserved
 ///////////////////////////////////////////////
-using FireworksFramework.Interfaces;
 using FireworksFramework.Managers;
-using FireworksFramework.Types;
 using System;
-using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using static FireworksFramework.Types.Enums;
 
 namespace FireworksFramework.Views
 {
     /// <summary>
     /// Interaction logic for FireworksView.xaml
     /// </summary>
-    public partial class FireworksView : Window, IFireworksDesigner
+    public partial class FireworksView : Window
     {
         System.Windows.Forms.Integration.WindowsFormsHost _host;
-        public PluginType PluginType { get { return PluginType.Application; } }
-
-        public string PluginName
-        {
-            get { return "IsWiX"; }
-        }
-
-        public System.Drawing.Image PluginImage
-        {
-            get
-            {
-                return System.Drawing.Image.FromStream(Assembly.GetExecutingAssembly().GetManifestResourceStream("FireworksFramework.Fireworks.ico"));
-            }
-        }
-
-        public string PluginOrder
-        {
-            get { return "zzzfireworks"; }
-        }
-
-        public string PluginInformation
-        {
-            get
-            {
-                return new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("FireworksFramework.License.txt")).ReadToEnd();
-            }
-        }
-
+      
         public FireworksView()
         {
             try
@@ -194,15 +163,6 @@ namespace FireworksFramework.Views
             {
                 viewModel.TryLoad(FireworksManager.FireworksManagerInstance.FilePath);
             }
-        }
-
-        public void LoadData()
-        {
-        }
-
-        public bool IsValidContext()
-        {
-            return false;
         }
     }
 }
