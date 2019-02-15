@@ -33,8 +33,13 @@ namespace FireworksFramework.Views
             InitializeComponent();
             PopulateMenuStrip();
 
-       
+
             _host = new System.Windows.Forms.Integration.WindowsFormsHost();
+
+            if (!string.IsNullOrEmpty(FireworksManager.FireworksManagerInstance.FilePath))
+            {
+                this.WindowState = WindowState.Maximized;
+            }
         }
 
         private void CommonCommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
