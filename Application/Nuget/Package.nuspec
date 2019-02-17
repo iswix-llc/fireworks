@@ -14,7 +14,6 @@
     <tags>wpf winforms c# plugins xml designers application framework</tags>
     <dependencies>
       <dependency id="DiffPlex" version="1.4.3"/>
-      <dependency id="Extended.Wpf.Toolkit" version="3.5.0"/>
     </dependencies>
   </metadata>
   <files>
