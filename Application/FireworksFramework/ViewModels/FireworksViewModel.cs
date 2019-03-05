@@ -345,20 +345,26 @@ namespace FireworksFramework.ViewModels
         }
         void PublishNamespace()
         {
-            List<IFireworksDesigner> activeDesigners = new List<IFireworksDesigner>();
-
-            foreach (var designer in _pluginManager.Designers.Values)
-            {
-                if (designer.PluginType == PluginType.Designer && designer.IsValidContext())
-                {
-                    activeDesigners.Add(designer as IFireworksDesigner);
-                }
-            }
-            ActiveDesigners = activeDesigners;
-            ActiveDesigner = ActiveDesigners.First();
+           
         }
         public void DocumentUpdated()
         {
+            if (_documentManager.DocumentState != DocumentStates.Closed)
+            {
+                List<IFireworksDesigner> activeDesigners = new List<IFireworksDesigner>();
+
+                foreach (var designer in _pluginManager.Designers.Values)
+                {
+                    if (designer.PluginType == PluginType.Designer && designer.IsValidContext())
+                    {
+                        activeDesigners.Add(designer as IFireworksDesigner);
+                    }
+                }
+                ActiveDesigners = activeDesigners;
+                ActiveDesigner = null;
+                ActiveDesigner = ActiveDesigners.First();
+
+            }
         }
         private string GetProductName()
         {
