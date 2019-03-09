@@ -153,7 +153,7 @@ namespace FireworksFramework.Managers
                 PublishToSubscriber();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw new Exception("Load Failed");
             }
@@ -247,8 +247,8 @@ namespace FireworksFramework.Managers
                     {
                         _prevdocumentPath = _documentPath;
                         subscriber.Publish(DocumentPath);
+                        subscriber.DocumentUpdated();
                     }
-                    subscriber.DocumentUpdated();
                 }
             }
         }
