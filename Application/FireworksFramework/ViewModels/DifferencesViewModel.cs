@@ -55,8 +55,11 @@ namespace FireworksFramework.ViewModels
         {
             Differ differ = new Differ();
             SideBySideDiffBuilder diffBuilder = new SideBySideDiffBuilder(differ);
-            Diff= diffBuilder.BuildDiffModel(_documentManager.SavedDocument.ToString(), _documentManager.Document.ToString());
-            RaisePropertyChangedEvent("Diff");
+            if (_documentManager.Document != null)
+            {
+                Diff = diffBuilder.BuildDiffModel(_documentManager.SavedDocument.ToString(), _documentManager.Document.ToString());
+                RaisePropertyChangedEvent("Diff");
+            }
         }
     }
 }

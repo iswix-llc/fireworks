@@ -345,10 +345,6 @@ namespace FireworksFramework.ViewModels
         }
         void PublishNamespace()
         {
-           
-        }
-        public void DocumentUpdated()
-        {
             if (_documentManager.DocumentState != DocumentStates.Closed)
             {
                 List<IFireworksDesigner> activeDesigners = new List<IFireworksDesigner>();
@@ -362,9 +358,15 @@ namespace FireworksFramework.ViewModels
                 }
                 ActiveDesigners = activeDesigners;
                 ActiveDesigner = null;
-                ActiveDesigner = ActiveDesigners.First();
-
+                if (activeDesigners.Any())
+                {
+                    ActiveDesigner = ActiveDesigners.First();
+                }
             }
+
+        }
+        public void DocumentUpdated()
+        {
         }
         private string GetProductName()
         {

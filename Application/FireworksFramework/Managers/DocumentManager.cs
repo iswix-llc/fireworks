@@ -247,8 +247,8 @@ namespace FireworksFramework.Managers
                     {
                         _prevdocumentPath = _documentPath;
                         subscriber.Publish(DocumentPath);
-                        subscriber.DocumentUpdated();
                     }
+                    subscriber.DocumentUpdated();
                 }
             }
         }
